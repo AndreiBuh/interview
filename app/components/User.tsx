@@ -4,7 +4,11 @@ interface UserProps {
 }
 
 const User: React.FC<UserProps> = ({ id, name }) => {
-  return <li key={id}>{name}</li>;
+  return (
+    <li>
+      {id}. {name}
+    </li>
+  );
 };
 
 export default User;

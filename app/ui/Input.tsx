@@ -8,7 +8,7 @@ interface InputProps {
 
 const Input: React.FC<InputProps> = ({
   type = "text",
-  placeholder = "",
+  placeholder = "Search...",
   value,
   onChange,
   className = "",
