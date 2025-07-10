@@ -1,4 +1,9 @@
+"use client";
+
 import React, { useEffect, useState } from "react";
+
+// components
+import Users from "../components/Users";
 
 // types
 import { User as IUser } from "../types/User";
@@ -20,8 +25,12 @@ const UsersList: React.FC = () => {
         }
         const data: IUser[] = await response.json();
         setUsers(data);
-      } catch (err: any) {
-        setError(err.message || "An error occurred");
+      } catch (err: unknown) {
+        if (err instanceof Error) {
+          setError(err.message || "An error occurred");
+        } else {
+          setError("An unknown error occurred");
+        }
       } finally {
         setLoading(false);
       }

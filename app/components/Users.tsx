@@ -11,15 +11,11 @@ import Input from "../ui/Input";
 //types
 import { User as IUser } from "../types/User";
 
-export default function Users() {
+export default function Users({ users }: { users?: IUser[] }) {
   const [filter, setFilter] = useState<string>("");
 
-  const { data } = useQuery<IUser[]>({
-    queryKey: ["users"],
-  });
-
   // Filter users based on the input
-  const filteredUsers = data?.filter((user) =>
+  const filteredUsers = users?.filter((user) =>
     user.name.toLowerCase().includes(filter.toLowerCase())
   );
 
