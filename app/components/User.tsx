@@ -21,13 +21,13 @@ const User: React.FC<UserProps> = ({ id, name, email, phone }) => {
       aria-expanded={toggle}
       aria-controls={`user-details-${id}`}
     >
-      <div>
+      <h6>
         {id}. {name}
-      </div>
+      </h6>
       {toggle && (
         <div className="transition-all duration-300 ease-in-out">
-          <div>Email: {email}</div>
-          <div>Phone: {phone}</div>
+          <p>Email: {email}</p>
+          <p>Phone: {phone}</p>
         </div>
       )}
     </li>

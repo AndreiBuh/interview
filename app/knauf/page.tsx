@@ -10,7 +10,10 @@ import Users from "../components/Users";
 //constants
 import { ENDPOINTS } from "../constants";
 
-async function fetchPosts() {
+// types
+import { User } from "../types/User";
+
+async function fetchPosts(): Promise<User[]> {
   const res = await fetch(ENDPOINTS.USERS);
   if (!res.ok) {
     throw new Error("Failed to fetch users");

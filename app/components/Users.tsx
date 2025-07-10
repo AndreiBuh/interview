@@ -12,7 +12,7 @@ import Input from "../ui/Input";
 import { User as IUser } from "../types/User";
 
 export default function Users() {
-  const [filter, setFilter] = useState("");
+  const [filter, setFilter] = useState<string>("");
 
   const { data } = useQuery<IUser[]>({
     queryKey: ["posts"],
@@ -24,7 +24,10 @@ export default function Users() {
   );
 
   return (
-    <section className="flex flex-col items-center justify-center min-h-screen">
+    <section
+      className="flex flex-col items-center justify-center min-h-screen"
+      aria-labelledby="users-section-title"
+    >
       <Input
         type="text"
         placeholder="Search users by name"
@@ -33,8 +36,9 @@ export default function Users() {
         }
         className="mb-4 p-2 w-full max-w-sm"
         value={filter}
+        aria-label="Search users by name"
       />
-      <ul>
+      <ul aria-live="polite" aria-busy={!filteredUsers}>
         {filteredUsers?.map((user) => (
           <User
             key={user.id}
