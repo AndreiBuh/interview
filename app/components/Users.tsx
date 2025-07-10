@@ -2,7 +2,6 @@
 
 // third party libraries
 import { SetStateAction, useState } from "react";
-import { useQuery } from "@tanstack/react-query";
 
 // components
 import User from "./User";
