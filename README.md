@@ -7,4 +7,5 @@
     @tanstack/react-query: The core library for managing queries.
     @tanstack/react-query-devtools: A tool for debugging and visualizing queries.
 
-The QueryClient is the heart of TanStack Query. It manages the cache and provides the context for your queries.
+## npm install @reduxjs/toolkit react-redux
+
