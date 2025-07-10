@@ -15,7 +15,7 @@ export default function Users() {
   const [filter, setFilter] = useState<string>("");
 
   const { data } = useQuery<IUser[]>({
-    queryKey: ["posts"],
+    queryKey: ["users"],
   });
 
   // Filter users based on the input

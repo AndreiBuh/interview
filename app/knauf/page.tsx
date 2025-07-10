@@ -13,7 +13,7 @@ import { ENDPOINTS } from "../constants";
 // types
 import { User } from "../types/User";
 
-async function fetchPosts(): Promise<User[]> {
+async function fetchUsers(): Promise<User[]> {
   const res = await fetch(ENDPOINTS.USERS);
   if (!res.ok) {
     throw new Error("Failed to fetch users");
@@ -25,8 +25,8 @@ export default async function KnaufPage() {
   const queryClient = new QueryClient();
 
   await queryClient.prefetchQuery({
-    queryKey: ["posts"],
-    queryFn: fetchPosts,
+    queryKey: ["users"],
+    queryFn: fetchUsers,
   });
 
   return (
