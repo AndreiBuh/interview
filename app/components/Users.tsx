@@ -36,7 +36,13 @@ export default function Users() {
       />
       <ul>
         {filteredUsers?.map((user) => (
-          <User key={user.id} id={user.id} name={user.name} />
+          <User
+            key={user.id}
+            id={user.id}
+            name={user.name}
+            email={user.email}
+            phone={user.phone}
+          />
         ))}
       </ul>
     </section>
