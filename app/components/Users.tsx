@@ -34,14 +34,8 @@ export default function Users({ users }: { users?: IUser[] }) {
         aria-label="Search users by name"
       />
       <ul aria-live="polite" aria-busy={!filteredUsers}>
-        {filteredUsers?.map((user) => (
-          <User
-            key={user.id}
-            id={user.id}
-            name={user.name}
-            email={user.email}
-            phone={user.phone}
-          />
+        {filteredUsers?.map(({ id, name, email, phone }) => (
+          <User key={id} id={id} name={name} email={email} phone={phone} />
         ))}
       </ul>
     </section>
